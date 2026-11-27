@@ -1,6 +1,6 @@
 #!/bin/sh
 # 2026-11-27 tynubqy
-# Debian 13 install apt-cacher
+# Debian 13 install apt-cacher  
 
 sudo echo 2>/dev/null || { echo "install sudo"; exit 1; }
 sudo apt update;apt upgrade -y
