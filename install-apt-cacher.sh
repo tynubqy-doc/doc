@@ -4,7 +4,7 @@
 
 sudo apt update;apt upgrade -y
 sudo apt install -y apt-cacher
-sudo /etc/apt-cacher/apt-cacher.conf /etc/apt-cacher/apt-cacher.conf.ori
+sudo mv /etc/apt-cacher/apt-cacher.conf /etc/apt-cacher/apt-cacher.conf.ori
 
 sudo cat <<EOF >/etc/apt-cacher/apt-cacher.conf
 group = www-data
