@@ -4,7 +4,7 @@
 
 sudo echo 2>/dev/null || { echo "install sudo"; exit 1; }
 sudo apt update;apt upgrade -y
-sudo apt install -y apt-cacher
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -o Dpkg::Options::="--force-confdef" apt-cacher
 sudo mv /etc/apt-cacher/apt-cacher.conf /etc/apt-cacher/apt-cacher.conf.ori
 
 sudo cat <<EOF >/etc/apt-cacher/apt-cacher.conf
@@ -13,3 +13,4 @@ user = www-data
 distinct_namespaces = 1
 allowed_hosts = *
 EOF
+systemctl restart apt-cacher
